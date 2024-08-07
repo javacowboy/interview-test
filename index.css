@@ -201,6 +201,7 @@ body {
     justify-content: space-between;
     align-items: center;
     position: relative;
+    cursor: pointer;
 }
 .faq .answer {
     padding: 0 8px;
@@ -219,11 +220,19 @@ body {
     border-top: 2px solid;
     border-right: 2px solid;
     transform: rotate(225deg);
+    animation: rotateback .5s normal;
     right: 12px;
     top: 36px;
 }
 .faq .question.open::after {
     transform: rotate(135deg);
+    animation: rotatedown .5s normal;
+}
+@keyframes rotatedown {
+    0% {transform: rotate(225deg);}
+}
+@keyframes rotateback {
+    0% {transform: rotate(135deg);}
 }
 .faq .answer p {
     margin-top: 0;
