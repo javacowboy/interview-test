@@ -47,36 +47,23 @@ function handleLinks(el, parentTagName, className) {
     });
 }   
 
-/*
-function handleLinks(el) {
-    
-    If a link is inside a bold tag:
-        a. add the class "con-button" to the link
-        b. move the link outside of the bold tag
-        c. delete the bold tag
-    If a link is inside an italics tag:
-        a. add the classes "con-button blue" to the link
-        b. move the link outside of the italics tag
-        c. then delete the italics tag
-    
-   el.querySelectorAll('a').forEach(link => {
-        let parent = link.parentElement;
-        switch (parent.localName) {
-            case 'b': //bold
-                addClassAndMoveToParentLevel(link, 'con-button');
-                break;
-            case 'i': //italics
-                addClassAndMoveToParentLevel(link, 'con-button blue');
-                break;
-            default:
-                break;
+function faqQuestionClick(el) {
+    let faqQuestions = document.querySelectorAll('.question');
+    let faqAnswers = document.querySelectorAll('.answer');
+    let selectedIndex = -1;
+    //close all questions and answers and determine the index of the clicked question.
+    faqQuestions.forEach((question, index) => {
+        if(question === el) {
+            selectedIndex = index;
         }
-   });
-}
-*/
-
-function faqQuestionClick(e) {
-    alert(e.innerText);
+        question.className = 'question';
+    });
+    faqAnswers.forEach(answer => {
+        answer.className = 'answer';
+    });
+    //open the clicked question and answer
+    faqQuestions[selectedIndex].className = 'question open';
+    faqAnswers[selectedIndex].className = 'answer open';
 }
 
 function processBackgroundColor(el) {

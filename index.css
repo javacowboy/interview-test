@@ -204,6 +204,10 @@ body {
 }
 .faq .answer {
     padding: 0 8px;
+    display: none;
+}
+.faq .answer.open {
+    display: block;
 }
 .faq .question::after {
     content: '';
@@ -217,6 +221,9 @@ body {
     transform: rotate(225deg);
     right: 12px;
     top: 36px;
+}
+.faq .question.open::after {
+    transform: rotate(135deg);
 }
 .faq .answer p {
     margin-top: 0;
