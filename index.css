@@ -177,6 +177,16 @@ body {
     padding: 50px;
     gap: var(--spacing-m);
     max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.double {
+    grid-column: span 2;
+}
+
+.triple {
+    grid-column: span 3;
 }
 
 .faq {
