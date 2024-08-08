@@ -249,6 +249,8 @@ body {
 }
 .section:last-child {
     margin-bottom: 100px;
+    position: sticky;
+    bottom: 0
 }
 
 
